@@ -1,3 +1,4 @@
 db.sqlite3
-common/__pycache__
+__pycache__
 common/settings.py
+migrations
