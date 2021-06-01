@@ -1,22 +1,26 @@
-from django.db import models
-from django.contrib.auth.models import User
-from autoslug import AutoSlugField
+import uuid
+import os
 
-from post.models import CategoryModel
+from django.db import models
+# from django.contrib.auth.models import User
+from autoslug import AutoSlugField
 from ckeditor.fields import RichTextField
+
+from account.models import CustomUserModel as User
+from post.models import CategoryModel
 
 
 def image_path(instance, imagename): # uuid4().hex + ext
     dir_path = 'post/images/'
     # name = str(self.unique_name)
     name = uuid.uuid4().hex
-    extension = '.'+str(instance.upload).split('.')[-1]
+    extension = '.'+str(instance.image).split('.')[-1]
     return os.path.join(dir_path, name+extension)
 
 class PostModel(models.Model):
     """docstring for PostModel."""
     title = models.CharField(max_length=30, blank=False, null=False)
-    images = models.ImageField(upload_to=image_path)
+    image = models.ImageField(upload_to=image_path)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='a_post')
     created_date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True)

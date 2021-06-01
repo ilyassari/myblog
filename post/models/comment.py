@@ -1,6 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 
+from account.models import CustomUserModel as User
 from post.models import PostModel
 
 class CommentModel(models.Model):
@@ -12,5 +13,5 @@ class CommentModel(models.Model):
     content = models.TextField()
 
     def __str__(self):
-        text = f"id:{self.id}, title: {self.post}"
+        text = f"id:{self.id}, post: {self.post}"
         return text
