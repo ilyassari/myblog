@@ -5,8 +5,6 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 
-
-
 def avatar_path(instance, imagename): # uuid4().hex + ext
     dir_path = 'account/images/'
     # name = str(self.unique_name)

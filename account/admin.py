@@ -6,7 +6,7 @@ from account.models import CustomUserModel
 @admin.register(CustomUserModel)
 class CustomAdmin(UserAdmin):
     """docstring for CustomAdmin.UserAdmin"""
-    model = CustomUserModel
+    # model = CustomUserModel
     list_display = ('id', 'username', 'email')
     fieldsets = UserAdmin.fieldsets + (
         ('Change Avatar', {

@@ -2,7 +2,7 @@ from django.db import models
 # from django.contrib.auth.models import User
 
 from account.models import CustomUserModel as User
-from post.models import PostModel
+from blog.models import PostModel
 
 class CommentModel(models.Model):
     """docstring for CommentModel."""

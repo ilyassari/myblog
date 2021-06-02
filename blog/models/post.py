@@ -7,11 +7,11 @@ from autoslug import AutoSlugField
 from ckeditor.fields import RichTextField
 
 from account.models import CustomUserModel as User
-from post.models import CategoryModel
+from blog.models import CategoryModel
 
 
 def image_path(instance, imagename): # uuid4().hex + ext
-    dir_path = 'post/images/'
+    dir_path = 'blog/images/'
     # name = str(self.unique_name)
     name = uuid.uuid4().hex
     extension = '.'+str(instance.image).split('.')[-1]
