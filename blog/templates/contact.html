@@ -3,7 +3,7 @@
 
 
 {% block _title %}
-    Home
+    Contact
 {% endblock %}
 
 {% block _navbar %}
@@ -18,9 +18,15 @@
 
 {% block _content1 %}
 
-  {% include 'blog_cards.html' %}
+  <div class="row">
 
-  {% include 'pagination.html' %}
+    <p>İletişim Sayfası</p>
+    <p>{{ key }}</p>
+    <p>{{ key1 }}</p>
+    <p>{{ key2 }}</p>
+
+  </div>
+
 
 {% endblock %}
 
@@ -28,10 +34,6 @@
 {% block _right_content %}
 
   {% include 'user_operations.html' %}
-
-  {% include 'latest_topics.html' %}
-
-  {% include 'tag_cloud.html' %}
 
 {% endblock %}
 

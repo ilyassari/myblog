@@ -10,6 +10,7 @@
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <title>
+        MyBlog |
         {% block _title %}
         {% endblock %}
     </title>
@@ -23,12 +24,12 @@
   <body>
 
 
-    <div class=""> <!--   fixed-top -->
+    <div class="fixed-top mb-3"> <!--   fixed-top -->
       {% block _navbar %}
       {% endblock %}
     </div>
 
-    <div class="">
+    <div class="mb-3">
       {% block _banner %}
       {% endblock %}
     </div>

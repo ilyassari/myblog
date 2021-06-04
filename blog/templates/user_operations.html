@@ -1,13 +1,38 @@
 
-<div class="card">
-  <h4>Kullanıcı İşlemleri</h4>
-  <div class="list-group">
-    <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
-      Profil Düzenle
-    </button>
-    <button type="button" class="list-group-item list-group-item-action">Şifre işlemleri</button>
-    <button type="button" class="list-group-item list-group-item-action">Yazı ekle</button>
-    <button type="button" class="list-group-item list-group-item-action" disabled>Favoriler</button>
-    <button type="button" class="list-group-item list-group-item-action">Çıkış yap</button>
+
+
+{% if request.user.is_authenticated %}
+  <!-- Giriş yapılmışsa kullanıcı işlemleri -->
+  <div class="card">
+    <h4>Kullanıcı İşlemleri</h4>
+    <div class="list-group">
+      <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
+        Profil Düzenle
+      </button>
+      <button type="button" class="list-group-item list-group-item-action">Şifre işlemleri</button>
+      <button type="button" class="list-group-item list-group-item-action">Yazı ekle</button>
+      <button type="button" class="list-group-item list-group-item-action" disabled>Favoriler</button>
+      <button type="button" class="list-group-item list-group-item-action">Çıkış yap</button>
+    </div>
   </div>
-</div>
+
+{% else %}
+  <!-- Giriş yapılmamışsa Login Form açılsın -->
+  <form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">E-posta adresiniz hiçbir koşulda üçüncü taraflarda paylaşılmaz</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+{% endif %}

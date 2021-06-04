@@ -3,7 +3,7 @@ from blog.models import *
 
 @admin.register(CategoryModel)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title')
+    list_display = ('id', 'title', 'slug')
 
 @admin.register(PostModel)
 class PostAdmin(admin.ModelAdmin):
@@ -16,3 +16,7 @@ class CommentAdmin(admin.ModelAdmin):
 @admin.register(ContactModel)
 class ContactAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'full_name', 'created_date')
+
+@admin.register(BannerModel)
+class BannerAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'active')

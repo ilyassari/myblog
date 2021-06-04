@@ -1,80 +1,17 @@
+{% for post in posts %}
 
   <div class="card row" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+    <img src="{{ post.image.url }}" class="card-img-top" alt="..." style="max-height: 160px;">
     <div class="card-body">
-      <h5 class="card-title">Konu Başlığı</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
+      <h5 class="card-title">{{ post.title|title }}</h5>
+      <p class="card-text">{{ post.content|truncatewords:20|striptags }}</p>
+      <a href="#" class="btn btn-sm btn-primary">Devamını oku</a>
     </div>
+  </div>
+{% empty %}
+
+  <div class="">
+    <span>Hiç yazı eklenmemiş</span>
   </div>
 
-  <div class="card row" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Konu Başlığı</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card row" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Konu Başlığı</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card row" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Konu Başlığı</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-    </div>
-  </div>
-  <div class="card row" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Konu Başlığı</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card row" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Konu Başlığı</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card row" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Konu Başlığı</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card row" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Konu Başlığı</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card row" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Konu Başlığı</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-    </div>
-  </div>
+{% endfor %}

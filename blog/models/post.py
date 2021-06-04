@@ -20,7 +20,7 @@ def image_path(instance, imagename): # uuid4().hex + ext
 class PostModel(models.Model):
     """docstring for PostModel."""
     title = models.CharField(max_length=30, blank=False, null=False)
-    image = models.ImageField(upload_to=image_path)
+    image = models.ImageField(upload_to=image_path, blank=True, null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='a_post')
     created_date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True)

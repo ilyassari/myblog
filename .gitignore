@@ -3,3 +3,4 @@ __pycache__
 common/settings.py
 migrations
 images
+media
