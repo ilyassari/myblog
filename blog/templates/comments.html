@@ -1,0 +1,35 @@
+<h5>Yorumlar</h5>
+
+
+
+{% for comment in comments %}
+
+  <div class="card mb-3" style="">
+    <div class="row g-0">
+      <div class="col-md-4" style="max-width: 80px;">
+        {% if comment.author.avatar %}
+          <img src=" {{ comment.author.avatar.url }}" class="img-thumbnail rounded" alt="...">
+        {% else %}
+          <img src="/media/common/no_avatar.jpeg" class="img-thumbnail rounded" alt="...">
+        {% endif %}
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h6 class="card-title">
+            {{ comment.author.username }}
+          </h6>
+          <p class="card-text">
+            {{ comment.content }}
+          </p>
+          <p class="card-text">
+            <small class="text-muted">
+              {{ comment.modified_date | timesince }}
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% empty %}
+  <p> Henüz bir yorum yapılmamış </p>
+{% endfor %}
