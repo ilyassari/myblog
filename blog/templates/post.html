@@ -9,14 +9,17 @@
           {{ post.title }}
         </h5>
         <h8 class="card-title">
-          {{ post.author }}
+          {{ post.author.username }}
         </h8>
         <p class="card-text">
           {{ post.content | safe }}
         </p>
         <p class="card-text">
           <small class="text-muted">
-            {{ post.modified_date | timesince }}
+            {{ post.created_date | timesince }} önce eklendi <br>
+            {% if post.created_date.minute != post.modified_date.minute  or post.created_date.second != post.modified_date.second  %}
+              {{ post.modified_date | timesince }} düzenlendi
+            {% endif %}
           </small>
         </p>
       </div>
