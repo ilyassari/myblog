@@ -1,0 +1,39 @@
+
+{% load crispy_forms_tags %}
+
+{% if request.user.is_authenticated %}
+
+  <div class="card mb-3" style="">
+    <div class="row g-0">
+      <div class="col-md-4" style="max-width: 80px;">
+        <div class="mt-1 mb-1">
+          {% if request.user.avatar %}
+            <img src=" {{ request.user.avatar.url }}" class="img-thumbnail rounded" alt="...">
+          {% else %}
+            <img src="/media/common/no_avatar.jpeg" class="img-thumbnail rounded" alt="...">
+          {% endif %}
+        </div>
+        <div class="">
+          <h6 class="card-title">
+            {{ request.user.username }}
+          </h6>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <p class="card-text">
+            <form class="" method="post">
+              {% csrf_token %}
+              {{ comment_form.media }}
+              {{ comment_form | crispy }}
+              <input type="submit" class=" btn btn-secondary btn-sm mt-2 mb-5" value="Yorum ekle">
+            </form>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% else %}
+  <p> Sadece giriş yapan kullanıcılar yorum yazabilir </p>
+{% endif %}

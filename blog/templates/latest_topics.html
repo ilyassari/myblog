@@ -3,29 +3,31 @@
     <h4>Son Konular</h4>
   </div>
   <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+    {% for post in lposts %}
+
+    <a href="{% url 'post_page' slug=post.slug %}" class="list-group-item list-group-item-action">
       <div class="d-flex w-100 justify-content-between">
-        <h6 class="mb-1">List group item heading</h6>
-        <small>3 days ago</small>
+        <h6 class="mb-1">
+          {{ post.title | title | truncatechars:16 | safe }}
+        </h6>
+        <small class="text-muted">
+          {{ post.modified_date | timesince }}
+        </small>
       </div>
-      <p class="mb-1">Some placeholder content in a paragraph.</p>
-      <small>And some small print.</small>
+      <p class="mb-1">
+        {{ post.content | truncatewords:12 | striptags }}
+      </p>
+      <!-- <small class="text-muted">And some muted small print.</small> -->
     </a>
-    <a href="#" class="list-group-item list-group-item-action">
-      <div class="d-flex w-100 justify-content-between">
-        <h6 class="mb-1">List group item heading</h6>
-        <small class="text-muted">3 days ago</small>
+
+    {% empty %}
+
+      <div class="">
+        <span> Hiç yazı eklenmemiş </span>
       </div>
-      <p class="mb-1">Some placeholder content in a paragraph.</p>
-      <small class="text-muted">And some muted small print.</small>
-    </a>
-    <a href="#" class="list-group-item list-group-item-action">
-      <div class="d-flex w-100 justify-content-between">
-        <h6 class="mb-1">List group item heading</h6>
-        <small class="text-muted">3 days ago</small>
-      </div>
-      <p class="mb-1">Some placeholder content in a paragraph.</p>
-      <small class="text-muted">And some muted small print.</small>
-    </a>
+
+    {% endfor %}
+
+
   </div>
 </div>

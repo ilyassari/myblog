@@ -12,7 +12,6 @@ def home(request):
             Q(title__icontains=search) |
             Q(content__icontains=search)
         ).distinct()
-
     banner = BannerModel.objects.filter(active='True')
     page = request.GET.get('pg')
     paginator = Paginator(posts, 6)

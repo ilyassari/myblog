@@ -10,7 +10,19 @@
         Profil Düzenle
       </button>
       <button type="button" class="list-group-item list-group-item-action">Şifre işlemleri</button>
-      <button type="button" class="list-group-item list-group-item-action">Yazı ekle</button>
+
+      <a href="{% url 'add_post_page' %}" class="">
+        <button type="button" class="list-group-item list-group-item-action">
+          Yeni Gönderi
+        </button>
+      </a>
+
+      <a href="{% url 'my_posts_page' %}" class="">
+        <button type="button" class="list-group-item list-group-item-action">
+          Gönderilerim
+        </button>
+      </a>
+
       <button type="button" class="list-group-item list-group-item-action" disabled>Favoriler</button>
       <button type="button" class="list-group-item list-group-item-action">Çıkış yap</button>
     </div>

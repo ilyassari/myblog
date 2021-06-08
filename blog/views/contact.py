@@ -1,6 +1,4 @@
 from django.shortcuts import render, redirect
-from django.core.paginator import Paginator
-from django.db.models import Q
 
 from blog.models import ContactModel, BannerModel
 from blog.forms import ContactForm

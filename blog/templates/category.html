@@ -18,6 +18,13 @@
 
 {% block _content1 %}
 
+  <div class="">
+    <h4>
+      Kategori: {{ category }}
+    </h4>
+    <hr>
+  </div>
+
   {% include 'blog_cards.html' %}
 
   {% include 'pagination.html' %}
@@ -29,7 +36,7 @@
 
   {% include 'user_operations.html' %}
 
-  {% include 'latest_topics.html' %}
+  <!-- {% include 'latest_topics.html' %} -->
 
   {% include 'tag_cloud.html' %}
 

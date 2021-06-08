@@ -3,7 +3,7 @@
 
 
 {% block _title %}
-  {{ post.title }}
+    Gönderilerim
 {% endblock %}
 
 {% block _navbar %}
@@ -18,12 +18,16 @@
 
 {% block _content1 %}
 
-  {% include 'post.html' %}
+  <div class="">
+    <h4>
+      Gönderilerim
+    </h4>
+    <hr>
+  </div>
 
-  <h5> Yorumlar </h5> <br>
+  {% include 'blog_cards.html' %}
 
-  {% include 'add_comment.html' %}
-  {% include 'comments.html' %}
+  {% include 'pagination.html' %}
 
 {% endblock %}
 

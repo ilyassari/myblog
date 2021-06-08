@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load crispy_forms_tags %}
 
 {% block _title %}
-  {{ post.title }}
+    Yeni Gönderi
 {% endblock %}
 
 {% block _navbar %}
@@ -18,12 +18,20 @@
 
 {% block _content1 %}
 
-  {% include 'post.html' %}
+  <div class="row">
 
-  <h5> Yorumlar </h5> <br>
+    <h5>Yeni Gönderi</h5>
+    <hr>
 
-  {% include 'add_comment.html' %}
-  {% include 'comments.html' %}
+    <form class="" action="{% url 'add_post_page' %}" enctype="multipart/form-data" method="post">
+      {% csrf_token %}
+      {{ form.media }}
+      {{ form | crispy }}
+      <input type="submit" class="btn btn-primary mt-4 mb-4" value="Ekle">
+    </form>
+
+  </div>
+
 
 {% endblock %}
 
@@ -31,10 +39,6 @@
 {% block _right_content %}
 
   {% include 'user_operations.html' %}
-
-  {% include 'latest_topics.html' %}
-
-  {% include 'tag_cloud.html' %}
 
 {% endblock %}
 
