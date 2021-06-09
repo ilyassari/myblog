@@ -9,31 +9,33 @@
           {{ post.author.username }}
         </h8>
         {% if post.image %}
-        <div class="col-md-4 mt-1 mb-1">
-          <img src="{{ post.image.url }}" class="img-fluid" alt="...">
+        <div class="col-md-12 mt-1 mb-1">
+          <img src="{{ post.image.url }}" class="img-fluid" alt="..." style="max-height: 400px;">
         </div>
         {% endif %}
-        <p class="card-text">
-          {{ post.content | safe }}
-        </p>
+        <div class="">
+          <p class="card-text">
+            {{ post.content | safe }}
+          </p>
+        </div>
         <p class="card-text">
           <small class="text-muted">
             {{ post.created_date | timesince }} önce eklendi <br>
-            {% if post.created_date.minute != post.modified_date.minute  or post.created_date.second != post.modified_date.second  %}
+            {% if post.created_date.year != post.modified_date.year or post.created_date.month != post.modified_date.month or post.created_date.day != post.modified_date.day or post.created_date.minute != post.modified_date.minute or post.created_date.second != post.modified_date.second  %}
               {{ post.modified_date | timesince }} düzenlendi
             {% endif %}
           </small>
-          {% if request.user == post.author %}
-            <p>
-              <a class="btn btn-secondary btn-sm" href="{% url 'update_post_page' slug=post.slug %}">
-                Düzenle
-              </a>
-              <a class="btn btn-danger btn-sm" href="{% url 'delete_post_page' slug=post.slug %}">
-                Sil
-              </a>
-            </p>
-          {% endif %}
         </p>
+        {% if request.user == post.author %}
+          <p>
+            <a class="btn btn-secondary btn-sm" href="{% url 'update_post_page' slug=post.slug %}">
+              Düzenle
+            </a>
+            <a class="btn btn-danger btn-sm" href="{% url 'delete_post_page' slug=post.slug %}">
+              Sil
+            </a>
+          </p>
+        {% endif %}
       </div>
     </div>
   </div>

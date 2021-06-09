@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 from blog.models import PostModel, CommentModel, BannerModel
 from blog.forms import AddPostForm, UpdatePostForm, AddCommentForm
@@ -72,4 +73,5 @@ def delete_post(request, slug):
     """ deleting a post """
     # banner = BannerModel.objects.filter(active='True')
     post = get_object_or_404(PostModel, slug=slug, author=request.user).delete()
+    messages.success(request, 'Gönderi başarıyla silindi.')
     return redirect('my_posts_page')
