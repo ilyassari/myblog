@@ -21,7 +21,7 @@
           </p>
           {% if request.user == comment.author or request.user == post.author %}
             <p class="card-text">
-              <a class="btn btn-danger btn-sm" href="{% url 'delete_comment_page' id=comment.id %}">
+              <a class="btn btn-danger btn-sm" href="{% url 'delete_comment_url' id=comment.id %}">
                 Yorumu sil
               </a>
             </p>

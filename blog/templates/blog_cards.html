@@ -7,8 +7,8 @@
     {% endif %}
     <div class="card-body">
       <h5 class="card-title">{{ post.title|title }}</h5>
-      <p class="card-text">{{ post.content|truncatewords:20|striptags }}</p>
-      <a href="{% url 'post_page' slug=post.slug %}" class="btn btn-sm btn-primary">Devamını oku</a>
+      <p class="card-text">{{ post.content|striptags|safe|truncatewords:20 }}</p>
+      <a href="{% url 'post_url' slug=post.slug %}" class="btn btn-sm btn-primary">Devamını oku</a>
     </div>
   </div>
 {% empty %}

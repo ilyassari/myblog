@@ -1,14 +1,14 @@
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center">
 
-    {% if posts.has_previous %}
+    {% if page_obj.has_previous %}
     <li class="page-item">
-      <a class="page-link" href="?pg={{ posts.previous_page_number }}" aria-label="Previous">
+      <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
       </a>
     </li>
 
-    <li class="page-item"><a class="page-link" href="?pg={{ posts.previous_page_number }}">{{ posts.previous_page_number }}</a></li>
+    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a></li>
 
     {% else %}
     <li class="page-item disabled">
@@ -19,14 +19,14 @@
     {% endif %}
 
 
-    <li class="page-item"><a class="page-link fs-5 " href="#">{{ posts.number }}</a></li>
+    <li class="page-item"><a class="page-link fs-5 " href="#">{{ page_obj.number }}</a></li>
 
-    {% if posts.has_next %}
+    {% if page_obj.has_next %}
 
-    <li class="page-item"><a class="page-link" href="?pg={{ posts.next_page_number }}">{{ posts.next_page_number }}</a></li>
+    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a></li>
 
     <li class="page-item">
-      <a class="page-link" href="?pg={{ posts.next_page_number }}" aria-label="Next">
+      <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
       </a>
     </li>

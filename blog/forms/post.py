@@ -9,12 +9,12 @@ class AddPostForm(forms.ModelForm):
         fields = (
             'title', 'categories', 'image', 'content',
         )
-        labels = {
-            'title': 'Başlık',
-            'categories': 'Kategoriler',
-            'image': 'Görsel',
-            'content': 'İçerik',
-        }
+        # labels = {
+        #     'title': 'Başlık',
+        #     'categories': 'Kategoriler',
+        #     'image': 'Görsel',
+        #     'content': 'İçerik',
+        # }
 
 
 class UpdatePostForm(forms.ModelForm):
@@ -24,9 +24,9 @@ class UpdatePostForm(forms.ModelForm):
         fields = (
             'title', 'categories', 'image', 'content',
         )
-        labels = {
-            'title': 'Başlık',
-            'categories': 'Kategoriler',
-            'image': 'Görsel',
-            'content': 'İçerik',
-        }
+        # labels = {
+        #     'title': 'Başlık',
+        #     'categories': 'Kategoriler',
+        #     'image': 'Görsel',
+        #     'content': 'İçerik',
+        # }

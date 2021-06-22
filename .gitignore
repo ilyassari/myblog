@@ -4,3 +4,4 @@ common/settings.py
 migrations
 images
 media
+.env

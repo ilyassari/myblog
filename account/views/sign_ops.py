@@ -11,7 +11,7 @@ banner = BannerModel.objects.filter(active='True')
 @login_required(login_url='/')
 def sign_out(request):
     logout(request)
-    return redirect('home_page')
+    return redirect('home_url')
 
 def sign_up(request):
     if request.method == 'POST':
@@ -23,7 +23,7 @@ def sign_up(request):
             user = authenticate(username=username, password=password)
             login(request, user)
             messages.success(request, 'Yeni kullanıcı oluşturuldu.')
-            return redirect('update_user_page')
+            return redirect('update_user_url')
         print(' ')
     else:
         form = SignUpForm()

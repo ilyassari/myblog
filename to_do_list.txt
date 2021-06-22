@@ -1,0 +1,15 @@
+banner, footer, için ayrı bir app yap
+contact app i yap + eposta gönderme olsun
+user detail page düzenle
+bütün function based işlemleri class base e çevir
+iç içe yorum özelliği ekle
+add_comment.html düzenlenecek
+
+.env environment işlemleri
+settings dosyasını parçala
+loging işlemleri
+"import *" yıldız yerine öğeler tek tek yazılacak
+
+amazon s3 - static files
+google ile giriş
+discuss ile yorum yazma

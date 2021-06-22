@@ -6,7 +6,9 @@
           {{ post.title }}
         </h5>
         <h8 class="card-title">
-          {{ post.author.username }}
+            <a class="" href="{% url 'profile_url' username=post.author.username %}">
+              {{ post.author.username }}
+            </a>
         </h8>
         {% if post.image %}
         <div class="col-md-12 mt-1 mb-1">
@@ -28,10 +30,10 @@
         </p>
         {% if request.user == post.author %}
           <p>
-            <a class="btn btn-secondary btn-sm" href="{% url 'update_post_page' slug=post.slug %}">
+            <a class="btn btn-secondary btn-sm" href="{% url 'update_post_url' slug=post.slug %}">
               Düzenle
             </a>
-            <a class="btn btn-danger btn-sm" href="{% url 'delete_post_page' slug=post.slug %}">
+            <a class="btn btn-danger btn-sm" href="{% url 'delete_post_url' slug=post.slug %}">
               Sil
             </a>
           </p>

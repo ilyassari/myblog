@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load crispy_forms_tags %}
+
 
 {% block _title %}
-    Yeni Gönderi
+    {{ profile.username }}
 {% endblock %}
 
 {% block _navbar %}
@@ -18,20 +18,21 @@
 
 {% block _content1 %}
 
-  <div class="row">
-
-    <h5>Yeni Gönderi</h5>
+  <div class="">
+    <h4>
+      Kullanıcı Bilgileri
+    </h4>
     <hr>
-
-    <form class="" action="{% url 'add_post_url' %}" enctype="multipart/form-data" method="post">
-      {% csrf_token %}
-      {{ form.media }}
-      {{ form | crispy }}
-      <input type="submit" class="btn btn-primary mt-4 mb-4" value="Ekle">
-    </form>
-
   </div>
 
+  {% if messages %}
+    {% include 'messages.html' %}
+  {% endif %}
+
+  {{ profile }} <br>
+  {{ profile.get_full_name }}
+
+  {% include 'pagination.html' %}
 
 {% endblock %}
 
@@ -39,6 +40,10 @@
 {% block _right_content %}
 
   {% include 'user_operations.html' %}
+
+  {% include 'latest_topics.html' %}
+
+  {% include 'tag_cloud.html' %}
 
 {% endblock %}
 

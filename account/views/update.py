@@ -15,7 +15,7 @@ def update_user(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Profil Güncellendi.')
-            return redirect('update_user_page')
+            return redirect('update_user_url')
     else:
         form = UpdateUserForm(instance = request.user)
     context={
@@ -32,7 +32,7 @@ def change_pwd(request):
             user = form.save()
             update_session_auth_hash(request, user)
             messages.success(request, 'Şifre başarıyla değiştirildi.')
-            return redirect('change_pwd_page')
+            return redirect('change_pwd_url')
     else:
         form = PasswordChangeForm(request.user)
 
