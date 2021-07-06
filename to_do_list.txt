@@ -1,4 +1,4 @@
-banner, footer, için ayrı bir app yap
+
 contact app i yap + eposta gönderme olsun
 user detail page düzenle
 account app function based views leri class base e çevir
@@ -6,7 +6,7 @@ iç içe yorum özelliği ekle
 add_comment.html düzenlenecek
 kapak resmi harici resimler için resim yükleme alanı oluşturulacak
 
-loging (sentry) işlemleri
+loging işlemleri
 "import *" yıldız yerine öğeler tek tek yazılacak
 
 amazon s3 - static files
