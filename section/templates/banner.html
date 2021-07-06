@@ -1,3 +1,8 @@
+{% load banner_list %}
+{% banner_list as banners %}
+
+
+
 <div id="carouselExampleSlidesOnly" class="carousel slide mt-5" data-bs-ride="carousel">
   <div class="carousel-inner">
 
@@ -8,6 +13,6 @@
     {% empty %}
       <span>banner yok</span>
     {% endfor %}
-<!-- js ile kontrol etmek lazım -->
+
   </div>
 </div>

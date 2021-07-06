@@ -5,7 +5,7 @@ from django.db import models
 
 
 def image_path(instance, imagename): # uuid4().hex + ext
-    dir_path = 'blog/images/'
+    dir_path = 'section/banners/'
     # name = str(self.unique_name)
     name = uuid.uuid4().hex
     extension = '.'+str(instance.image).split('.')[-1]

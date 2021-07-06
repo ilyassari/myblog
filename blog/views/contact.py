@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import FormView
 
-from blog.models import ContactModel, BannerModel
+from blog.models import ContactModel
 from blog.forms import ContactForm
 
 

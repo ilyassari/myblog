@@ -3,7 +3,7 @@ from django.core.paginator import Paginator
 from django.db.models import Q
 from django.views.generic import ListView
 
-from blog.models import PostModel, CommentModel, BannerModel
+from blog.models import PostModel, CommentModel
 
 class HomeView(ListView):
     """docstring for CategoryModel."""

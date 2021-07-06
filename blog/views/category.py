@@ -3,9 +3,9 @@ from django.core.paginator import Paginator
 from django.db.models import Q
 from django.views.generic import ListView
 
-from blog.models import PostModel, BannerModel, CategoryModel
+from blog.models import PostModel, CategoryModel
 
-banner = BannerModel.objects.filter(active='True')
+# banner = BannerModel.objects.filter(active='True')
 
 class CategoryListView(ListView):
     """docstring for CategoryModel."""

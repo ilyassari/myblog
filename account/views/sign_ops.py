@@ -4,9 +4,9 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 
 from account.forms import SignUpForm
-from blog.models import BannerModel
+# from blog.models import BannerModel
 
-banner = BannerModel.objects.filter(active='True')
+# banner = BannerModel.objects.filter(active='True')
 
 @login_required(login_url='/')
 def sign_out(request):

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # my apps
     'account.apps.AccountConfig',
     'blog.apps.BlogConfig',
+    'section.apps.SectionConfig',
     # third party
     'ckeditor',
     'crispy_forms',
@@ -76,9 +77,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'common.wsgi.application'
 
 
-
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -103,6 +101,8 @@ STATICFILES_DIRS = [
     ]
 
 AUTH_USER_MODEL = 'account.CustomUserModel'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')

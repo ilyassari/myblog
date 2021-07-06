@@ -7,10 +7,10 @@ from django.views import View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.urls import reverse, reverse_lazy
 
-from blog.models import PostModel, CommentModel, BannerModel
+from blog.models import PostModel, CommentModel
 from blog.forms import AddPostForm, UpdatePostForm, AddCommentForm
 
-banner = BannerModel.objects.filter(active='True')
+# banner = BannerModel.objects.filter(active='True')
 lposts =  PostModel.objects.order_by('-modified_date')[:3]
 
 class PostView(View):
@@ -27,7 +27,7 @@ class PostView(View):
             'comments' : comments,
             'comment_form' : self.comment_form,
             'lposts' : lposts,
-            'banners' : banner,
+            # 'banners' : banner,
         }
         return render(request, 'one_post.html', context)
 

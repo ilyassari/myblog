@@ -16,7 +16,3 @@ class CommentAdmin(admin.ModelAdmin):
 @admin.register(ContactModel)
 class ContactAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'full_name', 'created_date')
-
-@admin.register(BannerModel)
-class BannerAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'active')

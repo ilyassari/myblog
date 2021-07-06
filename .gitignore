@@ -1,8 +1,9 @@
 db.sqlite3
 dbp.sqlite3
 __pycache__
-common/settings.py
 migrations
 images
 media
 .env
+how_to_do.txt
+logs

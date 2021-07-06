@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 
 from account.forms import UpdateUserForm
-from blog.models import BannerModel
+from section.models import BannerModel
 
 banner = BannerModel.objects.filter(active='True')
 

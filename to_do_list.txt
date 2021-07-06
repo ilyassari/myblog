@@ -4,10 +4,9 @@ user detail page düzenle
 account app function based views leri class base e çevir
 iç içe yorum özelliği ekle
 add_comment.html düzenlenecek
+kapak resmi harici resimler için resim yükleme alanı oluşturulacak
 
-
-settings dosyasını parçala
-loging işlemleri
+loging (sentry) işlemleri
 "import *" yıldız yerine öğeler tek tek yazılacak
 
 amazon s3 - static files
