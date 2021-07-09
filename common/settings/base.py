@@ -111,3 +111,50 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = '/'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'basic_log':{
+            'format': '{asctime} | {levelname} | {name} | {message}',
+            'style': '{'
+        }
+    },
+    'handlers':{
+        'console': {
+            'class': 'logging.StreamHandler'
+        },
+        'file':{
+            'class': 'logging.FileHandler',
+            'filename': 'logs/log.log',
+            'formatter': 'basic_log'
+        }
+    },
+    'loggers': {
+        'post_viewed': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO'
+        },
+        'post_added': {
+            'handlers': ['file'],
+            'level': 'INFO'
+        },
+        'post_updated': {
+            'handlers': ['file'],
+            'level': 'INFO'
+        },
+        'post_deleted': {
+            'handlers': ['file'],
+            'level': 'INFO'
+        },
+        'comment_added': {
+            'handlers': ['file'],
+            'level': 'INFO'
+        },
+        'comment_deleted': {
+            'handlers': ['file'],
+            'level': 'INFO'
+        }
+    }
+}

@@ -1,3 +1,5 @@
+import logging
+
 from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models import Q
 from django.contrib import messages
@@ -27,8 +29,11 @@ class PostView(View):
             'comments' : comments,
             'comment_form' : self.comment_form,
             'lposts' : lposts,
-            # 'banners' : banner,
         }
+        if request.user.is_authenticated:
+            logger = logging.getLogger('post_viewed')
+            logger.info(f'post-slug: {slug}, user: {request.user.username}')
+
         return render(request, 'one_post.html', context)
 
     def post(self, request, slug):
@@ -40,6 +45,9 @@ class PostView(View):
             new_comment.post = post
             new_comment.save()
             messages.success(request, 'Yorum başarıyla eklendi.')
+            if self.request.user.is_authenticated:
+                logger = logging.getLogger('comment_added')
+                logger.info(f'post-slug: {post.slug}, user: {request.user.username}')
         return redirect('post_url', slug=post.slug)
 
 # <editor-fold> *** def post
@@ -80,6 +88,9 @@ class AddPostView(LoginRequiredMixin, CreateView):  #LoginRequiredMixin i sola y
     fields= ( 'title', 'image', 'categories', 'content')
 
     def get_success_url(self):
+        if self.request.user.is_authenticated:
+            logger = logging.getLogger('post_added')
+            logger.info(f'post-slug: {self.object.slug}, user: {self.request.user.username}')
         return reverse('post_url', kwargs={
             'slug': self.object.slug
         })
@@ -132,6 +143,9 @@ class UpdatePostView(LoginRequiredMixin, UpdateView):
         return post
 
     def get_success_url(self):
+        if self.request.user.is_authenticated:
+            logger = logging.getLogger('post_updated')
+            logger.info(f'post-slug: {self.object.slug}, user: {self.request.user.username}')
         return reverse('post_url', kwargs={
             'slug': self.get_object().slug
         })
@@ -165,6 +179,11 @@ class DeletePostView(LoginRequiredMixin, DeleteView):
 
     def get_queryset(self):
         post_to_del = PostModel.objects.filter(slug=self.kwargs['slug'], author=self.request.user)
+        print('------------------')
+        print(post_to_del[0])
+        if self.request.user.is_authenticated:
+            logger = logging.getLogger('post_deleted')
+            logger.info(f'post-slug: {post_to_del[0].slug}, user: {self.request.user.username}')
         return post_to_del
 
     def get(self, request, *args, **kwargs):

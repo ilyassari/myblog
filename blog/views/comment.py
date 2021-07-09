@@ -1,3 +1,5 @@
+import logging
+
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -18,6 +20,9 @@ class DeleteCommentView(LoginRequiredMixin, DeleteView):
 
     def get_queryset(self):
         comment_to_del = CommentModel.objects.filter(id=self.kwargs['id'], author=self.request.user)
+        if self.request.user.is_authenticated:
+            logger = logging.getLogger('comment_deleted')
+            logger.info(f'post-slug: {comment_to_del[0].post.slug}, user: {self.request.user.username}')
         return comment_to_del
 
     def get(self, request, *args, **kwargs):
