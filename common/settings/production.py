@@ -30,7 +30,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'dbp.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'proje_adi',
+        'USER': 'kullanici_adi',
+        'PASSWORD': 'parola123',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }

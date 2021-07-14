@@ -1,13 +1,13 @@
+{% load static %}
 {% load banner_list %}
 {% banner_list as banners %}
-
 
 
 <div id="carouselExampleSlidesOnly" class="carousel slide mt-5" data-bs-ride="carousel">
   <div class="carousel-inner">
 
     {% for banner in banners %}
-        <div class="carousel-item active">
+        <div class="carousel-item">
           <img src="{{ banner.image.url }}" class="d-block w-100" alt="{{ banner.title }}">
         </div>
     {% empty %}
@@ -16,3 +16,5 @@
 
   </div>
 </div>
+
+    <script src="{% static 'js/banner.js' %}"></script>
