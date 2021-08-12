@@ -1,5 +1,6 @@
 
 contact app i yap + eposta gönderme olsun
+  kayıtlı kullanıcı bu sayfayı açınca eposta ve isim soyisim dolu gelsin
 user detail page düzenle
 account app function based views leri class base e çevir
 iç içe yorum özelliği ekle
@@ -7,7 +8,6 @@ iç içe yorum özelliği ekle
 bloğa tag (etiket) özelliği eklenecek
 JavaScript işleri,
   banner ın otomatik değişmesi - yapıldı ama düzgün çalışmıyor.
-* fare üzerine gelince menü renginin değişmesi
 kullanıcı işlemleri bölümü düzenlenecek
 normal kullanıcılar konu gönderisi yapamamalı-sadece yorum yapabilmeli
 

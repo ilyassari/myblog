@@ -9,6 +9,9 @@
     <!-- Bootstrap CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <title>
         MyBlog |
         {% block _title %}
@@ -17,6 +20,7 @@
 
       {% block _head %}
       {% endblock %}
+      <link rel="stylesheet" href="{% static 'css/user_ops.css' %}">
 
   </head>
 

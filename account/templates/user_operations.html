@@ -1,19 +1,19 @@
+{% load static %}
+
+<div class="card">
+  <h4>Kullanıcı İşlemleri</h4>
+  <div class="list-group" id="user_ops">
 
 
-
-{% if request.user.is_authenticated %}
-  <!-- Giriş yapılmışsa kullanıcı işlemleri -->
-  <div class="card">
-    <h4>Kullanıcı İşlemleri</h4>
-    <div class="list-group">
-
-      <a href="{% url 'add_post_url' %}" class="active">
-        <button type="button" class="list-group-item list-group-item-action active">
+    {% if request.user.is_authenticated %}
+      <!-- Giriş yapılmışsa kullanıcı işlemleri -->
+      <a href="{% url 'add_post_url' %}" class="nounderline">
+        <button type="button" class="list-group-item list-group-item-action">
           Yeni Gönderi
         </button>
       </a>
 
-      <a href="{% url 'my_posts_url' %}" class="">
+      <a href="{% url 'my_posts_url' %}" class="nounderline">
         <button type="button" class="list-group-item list-group-item-action">
           Gönderilerim
         </button>
@@ -23,48 +23,42 @@
 
       <button type="button" class="list-group-item list-group-item-action" disabled>Favoriler</button>
 
-      <a href="{% url 'update_user_url' %}" class="">
+      <a href="{% url 'update_user_url' %}" class="nounderline">
         <button type="button" class="list-group-item list-group-item-action">
           Profil Düzenle
         </button>
       </a>
 
-      <a href="{% url 'change_pwd_url' %}" class="">
+      <a href="{% url 'change_pwd_url' %}" class="nounderline">
         <button type="button" class="list-group-item list-group-item-action">
           Şifre işlemleri
         </button>
       </a>
 
 
-      <a href="{% url 'sign_out_url' %}" class="">
+      <a href="{% url 'sign_out_url' %}" class="nounderline">
         <button type="button" class="list-group-item list-group-item-action">
           Çıkış
         </button>
       </a>
 
+    {% else %}
+      <!-- Giriş yapılmamışsa Login Form açılsın -->
 
-    </div>
-  </div>
-
-{% else %}
-  <!-- Giriş yapılmamışsa Login Form açılsın -->
-
-
-  <div class="card">
-    <h4>Kullanıcı İşlemleri</h4>
-    <div class="list-group">
-      <a href="{% url 'sign_in_url' %}" class="">
+      <a href="{% url 'sign_in_url' %}" class="nounderline">
         <button type="button" class="list-group-item list-group-item-action">
           Siteye giriş yap
         </button>
       </a>
-      <a href="{% url 'sign_up_url' %}" class="">
+      <a href="{% url 'sign_up_url' %}" class="nounderline">
         <button type="button" class="list-group-item list-group-item-action">
           Siteye kayıt ol
         </button>
       </a>
-    </div>
+
+    {% endif %}
+
   </div>
+</div>
 
-
-{% endif %}
+    <script src="{% static 'js/user_ops.js' %}"></script>
