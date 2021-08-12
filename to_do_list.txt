@@ -3,18 +3,19 @@ contact app i yap + eposta gönderme olsun
 user detail page düzenle
 account app function based views leri class base e çevir
 iç içe yorum özelliği ekle
-add_comment.html düzenlenecek
-kapak resmi harici resimler için resim yükleme alanı oluşturulacak
+*kapak resmi harici resimler için resim yükleme alanı oluşturulacak
 bloğa tag (etiket) özelliği eklenecek
 JavaScript işleri,
   banner ın otomatik değişmesi - yapıldı ama düzgün çalışmıyor.
-  fare üzerine gelince menü renginin değişmesi
+* fare üzerine gelince menü renginin değişmesi
+kullanıcı işlemleri bölümü düzenlenecek
+normal kullanıcılar konu gönderisi yapamamalı-sadece yorum yapabilmeli
 
 loging işlemleri
   blog, comment ekle-sil için eklendi. diğer özellikler için eklenecek
   şu anda dosyaya kayıt yapıyor. database kayıt yapılacak.
 "import *" yıldız yerine öğeler tek tek yazılacak
 
-amazon s3 - static files
+*amazon s3 - static files
 google ile giriş
 discuss ile yorum yazma

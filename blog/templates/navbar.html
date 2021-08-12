@@ -10,16 +10,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'home_url' %}" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="{% url 'home_url' %}" aria-current="page" href="#">Ana Sayfa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost:8000/admin/">Admin</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="{% url 'post_url' slug='hede' %}">Blog Sample</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'contact_url' %}">Contact</a>
+          <a class="nav-link" href="{% url 'contact_url' %}">İletişim</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -29,12 +23,13 @@
             {% for category in categories %}
               <li><a class="dropdown-item" href="{% url 'category_url' slug=category.slug %}">{{ category.title }}</a></li>
             {% endfor %}
-
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
+        {% if request.user.is_superuser %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+          </li>
+        {% endif %}
       </ul>
       <form class="d-flex" action="{% url 'home_url' %}">
         <input class="form-control me-2" type="search" placeholder="Ara" aria-label="Search" name="sq">

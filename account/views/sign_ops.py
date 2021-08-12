@@ -28,7 +28,6 @@ def sign_up(request):
     else:
         form = SignUpForm()
     context={
-        'banners' : banner,
         'form' : form
     }
     return render(request, 'sign_up.html', context)

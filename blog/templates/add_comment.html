@@ -6,7 +6,7 @@
   <div class="card mb-3" style="">
     <div class="row g-0">
       <div class="col-md-4" style="max-width: 80px;">
-        <div class="mt-1 mb-1">
+        <div class="mt-5 mb-1">
           {% if request.user.avatar %}
             <img src=" {{ request.user.avatar.url }}" class="img-thumbnail rounded" alt="...">
           {% else %}
@@ -35,5 +35,7 @@
   </div>
 
 {% else %}
-  <p> Sadece giriş yapan kullanıcılar yorum yazabilir </p>
+  <div class="card">
+    <p> Sadece giriş yapan kullanıcılar yorum yazabilir </p>
+  </div>
 {% endif %}

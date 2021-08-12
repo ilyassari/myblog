@@ -4,7 +4,7 @@
 
   <div class="card mb-3" style="">
     <div class="row g-0">
-      <div class="col-md-4" style="max-width: 80px;">
+      <div class="col-md-4 mt-3" style="max-width: 80px;">
         {% if comment.author.avatar %}
           <img src=" {{ comment.author.avatar.url }}" class="img-thumbnail rounded" alt="...">
         {% else %}
@@ -28,7 +28,7 @@
           {% endif %}
           <p class="card-text">
             <small class="text-muted">
-              {{ comment.modified_date | timesince }}
+              {{ comment.modified_date | timesince }} önce
             </small>
           </p>
         </div>

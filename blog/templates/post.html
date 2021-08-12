@@ -24,7 +24,7 @@
           <small class="text-muted">
             {{ post.created_date | timesince }} önce eklendi <br>
             {% if post.created_date.year != post.modified_date.year or post.created_date.month != post.modified_date.month or post.created_date.day != post.modified_date.day or post.created_date.minute != post.modified_date.minute or post.created_date.second != post.modified_date.second  %}
-              {{ post.modified_date | timesince }} düzenlendi
+              {{ post.modified_date | timesince }} önce düzenlendi
             {% endif %}
           </small>
         </p>
