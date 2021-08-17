@@ -1,9 +1,7 @@
-db.sqlite3
-dbp.sqlite3
+*.sqlite3
 __pycache__
 migrations
 images
 media
 .env
-how_to_do.txt
 logs
