@@ -8,6 +8,6 @@ Class based views used for blog app.
 to start in development:  
 in terminal:
 
-```
-"python manage.py runserver --settings=common.settings.development"
+```bash
+python manage.py runserver --settings=common.settings.development
 ```
